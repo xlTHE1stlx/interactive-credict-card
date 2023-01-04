@@ -10,7 +10,7 @@ function base(e, target, name) {
 	e.value = Reflect.get(target, name);
 }
 
-function track(target, name) {
+function tracker(target, name) {
 	if (!deps.has(name)) {
 		const effect = () =>
 			document
@@ -19,7 +19,6 @@ function track(target, name) {
 		deps.set(name, effect);
 	}
 }
-
 function trigger(name) {
 	const effect = deps.get(name);
 	effect();
@@ -52,8 +51,6 @@ function deleteError(target) {
 	document.querySelectorAll(".text-error").forEach((item) => target.parentNode.removeChild(item));
 }
 
-const self = this;
-
 const form = document.querySelector("form");
 form.addEventListener("submit", (e) => {
 	e.preventDefault();
@@ -63,7 +60,7 @@ form.addEventListener("submit", (e) => {
 		classes: ["success"],
 		content: `
 			<figure style="width: 5rem">
-				<img src="./public/icon-complete.svg" alt="icon-success" />
+				<img src="/icon-complete.svg" alt="icon-success" />
 			</figure>
 			<h2
 				style="
@@ -96,7 +93,9 @@ const origin = {
 const proxy = new Proxy(origin, {
 	get(target, name) {
 		if (Reflect.has(target, name)) {
-			self.track(target, name);
+			// globalThis.tracker(target, name);
+			// self.tracker(target, name);
+			tracker(target, name);
 			return Reflect.get(target, name);
 		}
 		console.warn(`The property ${name} don't exist`);
@@ -104,7 +103,9 @@ const proxy = new Proxy(origin, {
 	},
 	set(target, name, newValue) {
 		Reflect.set(target, name, newValue);
-		self.trigger(name);
+		// globalThis.trigger(name);
+		// self.trigger(name);
+		trigger(name);
 	}
 });
 

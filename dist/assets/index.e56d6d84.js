@@ -1,0 +1,17 @@
+(function(){const t=document.createElement("link").relList;if(t&&t.supports&&t.supports("modulepreload"))return;for(const o of document.querySelectorAll('link[rel="modulepreload"]'))n(o);new MutationObserver(o=>{for(const c of o)if(c.type==="childList")for(const l of c.addedNodes)l.tagName==="LINK"&&l.rel==="modulepreload"&&n(l)}).observe(document,{childList:!0,subtree:!0});function r(o){const c={};return o.integrity&&(c.integrity=o.integrity),o.referrerpolicy&&(c.referrerPolicy=o.referrerpolicy),o.crossorigin==="use-credentials"?c.credentials="include":o.crossorigin==="anonymous"?c.credentials="omit":c.credentials="same-origin",c}function n(o){if(o.ep)return;o.ep=!0;const c=r(o);fetch(o.href,c)}})();function d(e,t,r){const n=e.getAttribute("data-default");e.tagName==="INPUT"&&(e.value=Reflect.get(t,r)||n),e.innerText=Reflect.get(t,r)||n}function m(e,t,r){e.value=Reflect.get(t,r)}function p(e,t){if(!a.has(t)){const r=()=>document.querySelectorAll(`*[connection=${t}]`).forEach(n=>d(n,e,t));a.set(t,r)}}function g(e){a.get(e)()}function i(e){e.classList.add("error"),e.parentNode.children[e.parentNode.children.length-1].id!=="spanError"&&f(e.parentNode,"span",{id:"spanError",classes:["text-error","error"],content:"formato no valido",styles:"grid-row: 3;grid-column: 1 / -1;color: var(--color-input-error);"})}function f(e,t,r){const n=document.createElement(t);n.setAttribute("id",r.id),n.setAttribute("style",r.styles),r.classes.map(o=>n.classList.add(o)),t==="span"&&(n.innerText=r.content),t!=="span"?e.appendChild(n).innerHTML=r.content:e.appendChild(n)}function h(e){document.querySelectorAll(".text-error").forEach(t=>e.parentNode.removeChild(t))}const s=document.querySelector("form");s.addEventListener("submit",e=>{e.preventDefault(),s.style="display: none";const t={id:"success",classes:["success"],content:`
+			<figure style="width: 5rem">
+				<img src="/icon-complete.svg" alt="icon-success" />
+			</figure>
+			<h2
+				style="
+					font-size: 2rem;
+					font-weight: 700;
+					margin: 0.5rem 0%;
+					color: var(--color-dark-violet);
+				"
+			>
+				Thank you!
+			</h2>
+			<p style="color: var(--color-dark-gray-violet)">We've added your card details</p>
+			<button type="submit" style="width: 15rem" onClick="document.location.reload()">Continue</button>
+			`,styles:"display: flex;flex-direction: column;width: clamp(50%, 80%, 90%);align-items: center;gap: 0.5rem;padding: 1rem 0rem;margin: auto 0%"};f(s.parentNode,"section",t)});document.querySelector("#btn-continue");const y={name:"",cardNumber:"",month:"",year:"",cvc:""},u=new Proxy(y,{get(e,t){return Reflect.has(e,t)?(p(e,t),Reflect.get(e,t)):(console.warn(`The property ${t} don't exist`),"")},set(e,t,r){Reflect.set(e,t,r),g(t)}}),a=new Map;document.querySelectorAll("*[connection]").forEach(e=>{d(e,u,e.getAttribute("connection"))});document.querySelectorAll("*[model]").forEach(e=>{const t=e.getAttribute("model");m(e,u,t);let r=0;e.addEventListener("input",n=>{(n.inputType==="deleteContentBackward"||e.value.length===0)&&(h(e),e.classList.remove("error")),e.getAttribute("name")==="numberCard"&&(r++,r===4&&e.value.length<18&&(e.value+=" ",r=0),e.value.length===0&&(r=0),e.value.match(/[a-zA-Z]/gm)&&i(e)),(e.getAttribute("name")==="yearCard"||e.getAttribute("name")==="monthCard")&&(e.value.length>2||e.getAttribute("name")==="monthCard"&&e.value>12)&&i(e),e.getAttribute("name")==="cvcCard"&&e.value.length>3&&i(e),Reflect.set(u,t,e.value)})});
