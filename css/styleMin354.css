@@ -1,0 +1,57 @@
+.header {
+    margin-bottom: 2.5rem;
+}
+
+.form {
+    gap: 0%;
+}
+
+.main {
+    margin: auto 0%;
+}
+
+.label {
+    gap: 0% var(--padding);
+    grid-template-columns: repeat(4, 1fr);
+    margin-bottom: var(--padding);
+    padding-top: 0%;
+}
+
+.label__legend {
+    grid-column: 1 / -1;
+    grid-row: auto;
+    padding: 0.6rem 0% 0.4rem 0%;
+}
+
+.label__input {
+    grid-column: auto / span 2;
+    grid-row: auto;
+}
+
+.label__input:last-child {
+    grid-column: 1 / -1;
+}
+
+@media screen and (max-width: 299px) {
+    .container__credictCard {
+        left: 50%;
+    }
+
+    .container__credictCard__back {
+        transform: translateX(-45%);
+    }
+
+    .container__credictCard__front {
+        transform: translateX(-55%) translateY(25%);
+    }
+}
+
+@media screen and (max-width: 424px) {
+    .form__label__legend {
+        font-size: 0.8rem;
+    }
+
+    .container__credictCard__number {
+        font-size: 5.05vw;
+    }
+}

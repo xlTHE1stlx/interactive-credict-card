@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Frontend Mentor | Interactive card details form</title>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+		<link rel="stylesheet" href="./css/reset.css" />
+		<link rel="stylesheet" href="./css/styles.css" media="screen and (max-width: 900px)" />
+		<link
+			rel="stylesheet"
+			href="./css/styleMin354.css"
+			media="screen and (orientation: portrait) and (max-width: 354px)"
+		/>
+		<link rel="stylesheet" href="./css/styleTable.css" media="screen and (min-width: 601px)" />
+		<link
+			rel="stylesheet"
+			href="./css/stylesComputer.css"
+			media="screen and (min-width: 901px)"
+		/>
+		<script src="./js/index.js" defer></script>
+	</head>
+	<body>
+		<header class="header">
+			<img class="header__img" src="/bg-main-mobile.png" alt="background purple" />
+			<div class="container">
+				<div class="container__credictCard container__credictCard__back">
+					<img src="/bg-card-back.png" alt="credict card back" />
+					<input
+						class="container__input"
+						type="number"
+						name="cvc"
+						id="cvc"
+						data-default="000"
+						readonly
+						connection="cvc"
+					/>
+				</div>
+				<div class="container__credictCard container__credictCard__front">
+					<img
+						class="container__img"
+						src="/bg-card-front.png"
+						alt="logo credict card front"
+					/>
+					<div class="container__front__elements">
+						<img
+							class="container__front__img"
+							src="/card-logo.svg"
+							alt="logo credict card front"
+						/>
+						<p
+							class="container__credictCard__number"
+							connection="cardNumber"
+							data-default="1234 5678 9123 0000"
+						></p>
+						<div class="subContainer__date">
+							<p
+								class="container__name"
+								connection="name"
+								data-default="Jane Appleseed"
+							></p>
+							<input
+								class="container__date"
+								type="number"
+								name="month"
+								id="month"
+								data-default="00"
+								readonly
+								connection="month"
+							/>
+							/
+							<input
+								class="container__date"
+								type="number"
+								name="year"
+								id="year"
+								data-default="00"
+								readonly
+								connection="year"
+							/>
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
+		<main class="main">
+			<form class="form" autocomplete="off">
+				<label for="nameCard" class="form__label">
+					<legend class="form__label__legend">Cardholder Name</legend>
+					<input
+						type="text"
+						name="nameCard"
+						id="nameCard"
+						placeholder="e.g. Jane Appleseed"
+						maxlength="18"
+						required
+						model="name"
+					/>
+					<!-- 
+						title="Debe ingresar un nombre valido" 
+						for add the custom message for the error I should edited the message of validationMessage doing use the setCustomValidity on JS
+					-->
+				</label>
+				<label for="numberCard" class="form__label">
+					<legend class="form__label__legend">Card Number</legend>
+					<input
+						class="label__input"
+						type="text"
+						name="numberCard"
+						id="numberCard"
+						placeholder="e.g. 1234 5678 9123 0000"
+						maxlength="19"
+						required
+						model="cardNumber"
+					/>
+				</label>
+				<label for="monthCard" class="form__label label">
+					<legend class="form__label__legend label__legend">Exp. Date (MM/YY)</legend>
+					<input
+						class="label__input"
+						type="number"
+						name="monthCard"
+						id="monthCard"
+						min="0"
+						max="12"
+						placeholder="MM"
+						required
+						model="month"
+					/>
+					<input
+						class="label__input"
+						type="number"
+						name="yearCard"
+						id="yearCard"
+						min="0"
+						max="99"
+						placeholder="YY"
+						required
+						model="year"
+					/>
+					<legend class="form__label__legend label__legend">CVC</legend>
+					<input
+						class="label__input"
+						type="number"
+						name="cvcCard"
+						id="cvcCard"
+						placeholder="e.g. 123"
+						min="000"
+						max="999"
+						required
+						model="cvc"
+					/>
+				</label>
+				<button type="submit">Confirm</button>
+			</form>
+		</main>
+		<footer class="footer">
+			<p class="attribution">
+				Challenge by&nbsp;<a
+					href="https://www.frontendmentor.io?ref=challenge"
+					target="_blank"
+					>Frontend Mentor</a
+				>. Coded by&nbsp;<a href="https://github.com/xlTHE1stlx/interactive-card"
+					>xlTHE1stlx</a
+				>.
+			</p>
+		</footer>
+	</body>
+</html>
