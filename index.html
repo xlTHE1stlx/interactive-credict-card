@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Frontend Mentor | Interactive card details form</title>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+		
+		<link rel="stylesheet" href="/assets/styles.562bc283.css" media="screen and (max-width: 900px)" />
+		<link
+			rel="stylesheet"
+			href="data:text/css;base64,LmhlYWRlciB7DQogICAgbWFyZ2luLWJvdHRvbTogMi41cmVtOw0KfQ0KDQouZm9ybSB7DQogICAgZ2FwOiAwJTsNCn0NCg0KLm1haW4gew0KICAgIG1hcmdpbjogYXV0byAwJTsNCn0NCg0KLmxhYmVsIHsNCiAgICBnYXA6IDAlIHZhcigtLXBhZGRpbmcpOw0KICAgIGdyaWQtdGVtcGxhdGUtY29sdW1uczogcmVwZWF0KDQsIDFmcik7DQogICAgbWFyZ2luLWJvdHRvbTogdmFyKC0tcGFkZGluZyk7DQogICAgcGFkZGluZy10b3A6IDAlOw0KfQ0KDQoubGFiZWxfX2xlZ2VuZCB7DQogICAgZ3JpZC1jb2x1bW46IDEgLyAtMTsNCiAgICBncmlkLXJvdzogYXV0bzsNCiAgICBwYWRkaW5nOiAwLjZyZW0gMCUgMC40cmVtIDAlOw0KfQ0KDQoubGFiZWxfX2lucHV0IHsNCiAgICBncmlkLWNvbHVtbjogYXV0byAvIHNwYW4gMjsNCiAgICBncmlkLXJvdzogYXV0bzsNCn0NCg0KLmxhYmVsX19pbnB1dDpsYXN0LWNoaWxkIHsNCiAgICBncmlkLWNvbHVtbjogMSAvIC0xOw0KfQ0KDQpAbWVkaWEgc2NyZWVuIGFuZCAobWF4LXdpZHRoOiAyOTlweCkgew0KICAgIC5jb250YWluZXJfX2NyZWRpY3RDYXJkIHsNCiAgICAgICAgbGVmdDogNTAlOw0KICAgIH0NCg0KICAgIC5jb250YWluZXJfX2NyZWRpY3RDYXJkX19iYWNrIHsNCiAgICAgICAgdHJhbnNmb3JtOiB0cmFuc2xhdGVYKC00NSUpOw0KICAgIH0NCg0KICAgIC5jb250YWluZXJfX2NyZWRpY3RDYXJkX19mcm9udCB7DQogICAgICAgIHRyYW5zZm9ybTogdHJhbnNsYXRlWCgtNTUlKSB0cmFuc2xhdGVZKDI1JSk7DQogICAgfQ0KfQ0KDQpAbWVkaWEgc2NyZWVuIGFuZCAobWF4LXdpZHRoOiA0MjRweCkgew0KICAgIC5mb3JtX19sYWJlbF9fbGVnZW5kIHsNCiAgICAgICAgZm9udC1zaXplOiAwLjhyZW07DQogICAgfQ0KDQogICAgLmNvbnRhaW5lcl9fY3JlZGljdENhcmRfX251bWJlciB7DQogICAgICAgIGZvbnQtc2l6ZTogNS4wNXZ3Ow0KICAgIH0NCn0="
+			media="screen and (orientation: portrait) and (max-width: 354px)"
+		/>
+		<link rel="stylesheet" href="data:text/css;base64,LmhlYWRlciB7DQogICAgbWFyZ2luLWJvdHRvbTogMi41cmVtOw0KfQ0KDQouY29udGFpbmVyX19jcmVkaWN0Q2FyZCB7DQogICAgdG9wOiA1MCU7DQogICAgbGVmdDogNTAlOw0KfQ0KDQouY29udGFpbmVyX19jcmVkaWN0Q2FyZF9fYmFjayB7DQogICAgdHJhbnNmb3JtOiB0cmFuc2xhdGUoLTQwJSwgLTcwJSk7DQp9DQoNCi5jb250YWluZXJfX2NyZWRpY3RDYXJkX19mcm9udCB7DQogICAgdHJhbnNmb3JtOiB0cmFuc2xhdGUoLTYwJSwgLTEwJSk7DQp9DQoNCi5tYWluIHsNCiAgICBtYXJnaW46IGF1dG8gMCU7DQp9DQoNCi5mb3JtX19sYWJlbF9fbGVnZW5kIHsNCiAgICBmb250LXNpemU6IDFyZW07DQp9" media="screen and (min-width: 601px)" />
+		<link
+			rel="stylesheet"
+			href="/assets/stylesComputer.fbe14a55.css"
+			media="screen and (min-width: 901px)"
+		/>
+		<!-- <script type="module" src="./js/index.js"></script> -->
+		
+		<script type="module" crossorigin src="/assets/index.e56d6d84.js"></script>
+		<link rel="stylesheet" href="/assets/index.d73ab875.css">
+	</head>
+	<body>
+		<header class="header">
+			<img class="header__img" src="/bg-main-mobile.png" alt="background purple" />
+			<div class="container">
+				<div class="container__credictCard container__credictCard__back">
+					<img src="/bg-card-back.png" alt="credict card back" />
+					<input
+						class="container__input"
+						type="number"
+						name="cvc"
+						id="cvc"
+						data-default="000"
+						readonly
+						connection="cvc"
+					/>
+				</div>
+				<div class="container__credictCard container__credictCard__front">
+					<img
+						class="container__img"
+						src="/bg-card-front.png"
+						alt="logo credict card front"
+					/>
+					<div class="container__front__elements">
+						<img
+							class="container__front__img"
+							src="/card-logo.svg"
+							alt="logo credict card front"
+						/>
+						<p
+							class="container__credictCard__number"
+							connection="cardNumber"
+							data-default="1234 5678 9123 0000"
+						></p>
+						<div class="subContainer__date">
+							<p
+								class="container__name"
+								connection="name"
+								data-default="Jane Appleseed"
+							></p>
+							<input
+								class="container__date"
+								type="number"
+								name="month"
+								id="month"
+								data-default="00"
+								readonly
+								connection="month"
+							/>
+							/
+							<input
+								class="container__date"
+								type="number"
+								name="year"
+								id="year"
+								data-default="00"
+								readonly
+								connection="year"
+							/>
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
+		<main class="main">
+			<form class="form" autocomplete="off">
+				<label for="nameCard" class="form__label">
+					<legend class="form__label__legend">Cardholder Name</legend>
+					<input
+						type="text"
+						name="nameCard"
+						id="nameCard"
+						placeholder="e.g. Jane Appleseed"
+						maxlength="18"
+						required
+						model="name"
+					/>
+					<!-- 
+						title="Debe ingresar un nombre valido" 
+						for add the custom message for the error I should edited the message of validationMessage doing use the setCustomValidity on JS
+					-->
+				</label>
+				<label for="numberCard" class="form__label">
+					<legend class="form__label__legend">Card Number</legend>
+					<input
+						class="label__input"
+						type="text"
+						name="numberCard"
+						id="numberCard"
+						placeholder="e.g. 1234 5678 9123 0000"
+						maxlength="19"
+						required
+						model="cardNumber"
+					/>
+				</label>
+				<label for="monthCard" class="form__label label">
+					<legend class="form__label__legend label__legend">Exp. Date (MM/YY)</legend>
+					<input
+						class="label__input"
+						type="number"
+						name="monthCard"
+						id="monthCard"
+						min="0"
+						max="12"
+						placeholder="MM"
+						required
+						model="month"
+					/>
+					<input
+						class="label__input"
+						type="number"
+						name="yearCard"
+						id="yearCard"
+						min="0"
+						max="99"
+						placeholder="YY"
+						required
+						model="year"
+					/>
+					<legend class="form__label__legend label__legend">CVC</legend>
+					<input
+						class="label__input"
+						type="number"
+						name="cvcCard"
+						id="cvcCard"
+						placeholder="e.g. 123"
+						min="000"
+						max="999"
+						required
+						model="cvc"
+					/>
+				</label>
+				<button type="submit">Confirm</button>
+			</form>
+		</main>
+		<footer class="footer">
+			<p class="attribution">
+				Challenge by&nbsp;<a
+					href="https://www.frontendmentor.io?ref=challenge"
+					target="_blank"
+					>Frontend Mentor</a
+				>. Coded by&nbsp;<a href="https://github.com/xlTHE1stlx/interactive-card"
+					>xlTHE1stlx</a
+				>.
+			</p>
+		</footer>
+	</body>
+</html>
