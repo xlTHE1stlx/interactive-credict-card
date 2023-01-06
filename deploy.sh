@@ -4,7 +4,7 @@
 set -e
 
 # build
-npm run build
+pnpm run build
 
 # navigate into the build output directory
 cd dist
@@ -24,6 +24,6 @@ git commit -m 'deploy'
 # git push -f git@github.com:<USERNAME>/<USERNAME>.github.io.git main
 
 # if you are deploying to https://<USERNAME>.github.io/<REPO>
-git push -f git@github.com:xlTHE1stlx/interactive-credict-card.git main:gh-pages
+git push -f git@github.com:xlTHE1stlx/interactive-credict-card.git master:gh-pages
 
 cd -
