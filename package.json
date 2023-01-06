@@ -7,7 +7,7 @@
 		"dev": "vite",
 		"build": "vite build",
 		"preview": "vite preview",
-		"deploy": "gh-pages -d dist"
+		"deploy": "gh-pages --dist 'dist' --branch 'gh-pages' --repo 'https://github.com/xlTHE1stlx/interactive-credict-card.git'"
 	},
 	"devDependencies": {
 		"gh-pages": "^4.0.0",
